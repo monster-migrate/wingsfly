@@ -84,6 +84,8 @@ Once Node.js and React Native CLI are installed, you can initialize and run your
 ### Running the App
 
 ```bash
+# clone the repo
+git clone https://github.com/monster-migrate/wingsfly.git
 npx react-native run-ios      # for iOS
 npx react-native run-android  # for Android
 ```
