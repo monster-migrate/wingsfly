@@ -2,7 +2,7 @@
 
 A React Native CLI application implementing the **Wingsfly** UI, featuring a horizontal date picker, dynamic "Today's Quote" section with progress bar, task list with icons and status toggles, and a sliding bottom drawer for creating new items. Built with TypeScript, modular architecture.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -12,7 +12,7 @@ A React Native CLI application implementing the **Wingsfly** UI, featuring a hor
 - Xcode (macOS) or Android Studio (Windows/macOS) or a live android device for testing
 
 ### Installation
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js v20.17.0**  
@@ -88,7 +88,7 @@ npx react-native run-ios      # for iOS
 npx react-native run-android  # for Android
 ```
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```text
 src/
@@ -115,7 +115,7 @@ src/
 └── App.tsx
 ```
 
-## 🔑 Key Decisions & Assumptions
+## Key Decisions & Assumptions
 
 - **React Native CLI + TypeScript** for native performance and type safety.
 - **Atomic Design** structure (atoms → molecules → organisms) for modularity.
@@ -124,20 +124,17 @@ src/
 - **Progress Calculation** based on completed vs. total tasks for selected date.
 - **Bottom Drawer Animation** implemented with React Native’s Animated API.
 
-## 🛠️ NPM Scripts
+## NPM Scripts
 
 - `npm run ios` / `yarn ios` — start iOS simulator
 - `npm run android` / `yarn android` — start Android emulator
 - `npm run lint` — run ESLint
 - `npm run format` — run Prettier
 
-## 📷 Screenshots
+## Screenshots
+### Home Screen  
+![homescreen](https://raw.githubusercontent.com/monster-migrate/wingsfly/refs/heads/main/assets/screenshots/homescreen.png)  
 
-
-## 🤝 Contributions
-
-Contributions welcome! Please open issues or submit pull requests for improvements.
-
-## 📄 License
-
-This project is licensed under the MIT License.
+### Bottom Drawer
+![bottomdrawer](https://raw.githubusercontent.com/monster-migrate/wingsfly/refs/heads/main/assets/screenshots/bottomdrawer.png)
+<hr>
