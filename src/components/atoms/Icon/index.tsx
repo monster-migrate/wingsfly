@@ -10,7 +10,6 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000', style }) => {
   const getIconComponent = () => {
-    // You can integrate with react-native-vector-icons or create custom icons
     switch (name) {
       case 'plus':
         return <View style={[styles.plus, { width: size, height: size }]} />;
