@@ -3,6 +3,7 @@
 A React Native CLI application implementing the **Wingsfly** UI, featuring a horizontal date picker, dynamic "Today's Quote" section with progress bar, task list with icons and status toggles, and a sliding bottom drawer for creating new items. Built with TypeScript, modular architecture.
 
 ## Getting Started
+Get the release-apk to test on your android device, [download here](https://github.com/monster-migrate/wingsfly/releases/)
 
 ### Prerequisites
 
