@@ -14,10 +14,12 @@ import Button from './src/components/atoms/Button';
 import ProgressBar from './src/components/molecules/ProgressBar';
 import { Task } from './src/components/molecules/TaskItem';
 import tasksByDate from './src/data/tasksByDate';
+import quotesByDate, { Quote } from './src/data/quotes';
 
 const App: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [drawerVisible, setDrawerVisible] = useState<boolean>(false);
+  const [currentQuote, setCurrentQuote] = useState<Quote>({ text: '', author: '' });
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const formatDateKey = (date: Date): string => {
@@ -54,6 +56,7 @@ const App: React.FC = () => {
     const key = formatDateKey(selectedDate);
     const newTasks = tasksByDate[key] ?? [];
     setTasks(newTasks);
+    setCurrentQuote(quotesByDate[key] ?? { text: 'Stay motivated!', author: '' });
   }, [selectedDate]);
   return (
     <SafeAreaView style={styles.container}>
@@ -76,16 +79,19 @@ const App: React.FC = () => {
         onDateSelect={handleDateSelect}
       />
 
-      <View style={styles.quoteSection}>
-        <Text style={styles.sectionTitle}>Today's Quote</Text>
-        <Text style={styles.quote}>
-          "You must do the things, you think you cannot do."
+<View style={styles.quoteSection}>
+      <Text style={styles.sectionTitle}>Today's Quote</Text>
+      <Text style={styles.quote}>"{currentQuote.text}"</Text>
+      {currentQuote.author ? (
+        <Text style={styles.author}>— {currentQuote.author}</Text>
+      ) : null}
+      <View style={styles.progressContainer}>
+        <Text style={styles.progressText}>
+          Progress {Math.round(progressPercentage * 100)}%
         </Text>
-        <View style={styles.progressContainer}>
-          <Text style={styles.progressText}>Progress {Math.round(progressPercentage * 100)}%</Text>
-          <ProgressBar progress={progressPercentage} />
-        </View>
+        <ProgressBar progress={progressPercentage} />
       </View>
+    </View>
 
       <View style={styles.taskSection}>
         <TaskList
@@ -153,8 +159,14 @@ const styles = StyleSheet.create({
   },
   quote: {
     fontSize: 16,
-    color: '#666',
     fontStyle: 'italic',
+    color: '#333',
+    marginBottom: 4,
+  },
+  author: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'right',
     marginBottom: 12,
   },
   progressContainer: {
